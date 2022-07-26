@@ -48,5 +48,5 @@ def logout():
     resp.delete_cookie('username')
     return resp
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()

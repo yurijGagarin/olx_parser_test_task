@@ -67,11 +67,11 @@ def parse_all_data():
 
     return total_res
 
-
-if __name__ == '__main__':
-    pprint(parse_all_data())
-
-    # pprint(parse_ad({
-    #     'img': 'no_thumbnail',
-    #     'url': 'https://www.olx.ua/d/uk/obyavlenie/prodazh-1k-kvartiri-v-zdanomu-dom-zhk-berezhanskiy-vul-gulaka-4-IDPaTK5.html',
-    # }))
+#
+# if __name__ == '__main__':
+#     pprint(parse_all_data())
+#
+#     # pprint(parse_ad({
+#     #     'img': 'no_thumbnail',
+#     #     'url': 'https://www.olx.ua/d/uk/obyavlenie/prodazh-1k-kvartiri-v-zdanomu-dom-zhk-berezhanskiy-vul-gulaka-4-IDPaTK5.html',
+#     # }))
