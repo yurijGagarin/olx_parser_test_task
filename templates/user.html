@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OLX parser</title>
+</head>
+<body>
+
+<h2>Olx data</h2>
+<button onclick="refresh()">Refresh</button>
+
+
+<table style="display: none; width: 100%" id="dataTable">
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+</table>
+<script>
+  function refresh() {
+    console.log('Refresh');
+    const table = document.getElementById('dataTable');
+    const data = JSON.parse(httpGet('/data'));
+
+    table.style.display = 'table';
+    data.forEach(function (datum) {
+      console.log(datum);
+      const row = table.insertRow();
+      row.insertCell().innerHTML = datum['name'];
+      row.insertCell().innerHTML = `<img style="width: 100px" src="${datum['img']}">`;
+      row.insertCell().innerHTML = datum['price'];
+      row.insertCell().innerHTML = '<button>Remove</button>';
+    });
+
+  }
+
+  function httpGet(theUrl) {
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
+  }
+</script>
+</body>
+</html>
