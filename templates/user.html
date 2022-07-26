@@ -34,11 +34,16 @@
       row.insertCell().innerHTML = datum['name'];
       row.insertCell().innerHTML = `<img style="width: 100px" src="${datum['img']}">`;
       row.insertCell().innerHTML = datum['price'];
-      row.insertCell().innerHTML = '<button>Remove</button>';
+      row.insertCell().innerHTML = '<input type="button" value="Delete Row" onclick="removeRow(this)">';
     });
 
   }
 
+
+ function removeRow(o) {
+     const p = o.parentNode.parentNode;
+     p.parentNode.removeChild(p);
+    }
   function httpGet(theUrl) {
     const xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false);
