@@ -1,5 +1,4 @@
 from concurrent.futures import ThreadPoolExecutor
-from pprint import pprint
 
 import requests
 from bs4 import BeautifulSoup
@@ -56,8 +55,6 @@ def parse_all_data():
 
     with ThreadPoolExecutor() as executor:
         results = executor.map(parse_list, urls)
-
-    # pprint(results)
 
     total_res = []
     for result in results:

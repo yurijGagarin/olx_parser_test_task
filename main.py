@@ -12,16 +12,15 @@ PASSWORD = os.environ['PASSWORD']
 
 @app.route("/about")
 def about():
-    username = request.cookies.get('username')
-    if username:
-        return render_template('about.html')
-    return render_template('guest.html')
+    is_user = request.cookies.get('username')
+    return render_template('about.html', is_user=is_user)
+
 
 @app.route("/")
 def index():
     username = request.cookies.get('username')
     if username:
-        return render_template('user.html')
+        return render_template('user.html', is_user=True)
     return render_template('guest.html')
 
 
@@ -54,6 +53,7 @@ def logout():
     resp = redirect("/", code=302)
     resp.delete_cookie('username')
     return resp
+
 
 if __name__ == '__main__':
     app.run()

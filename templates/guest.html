@@ -1,39 +1,37 @@
 {% extends 'base.html' %}
 {% block head %}
-Login
+    Login
 {% endblock %}
 
 {% block content %}
 
-<style>
-    html,
-    body {
-        height: 100%;
-    }
 
-</style>
+    <div class="row justify-content-center vh-75">
+        <div class="col-md-3 col-sm-9 col-xs-12">
+            <div class="card text-white bg-dark mt-5">
+                <div class="card-header">
+                    <h2>Login Page</h2>
+                </div>
+                <div class="card-body">
+                    <p>Please input following information to use this web-site</p>
+                    <form action="login" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" name="username" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" name="password" id="password">
+                        </div>
+                        <div>
+                            <input class="btn btn-lg btn-primary" type="submit" value="Lets goooo">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<main role="main" class="inner cover text-center">
-    <h1 class="cover-heading">Login Page</h1>
-    <p class="lead">Please input following information to use this web-site</p>
-    <p>
-    <form action="login" method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="text" name="password" id="password">
-    </div>
-    <div>
-        <p class="lead">
-        <input class="btn btn-lg btn-secondary" type="submit" value="Lets goooo">
-        </p>
-    </div>
-</form>
-
-</main>
 
 
 {% endblock %}
