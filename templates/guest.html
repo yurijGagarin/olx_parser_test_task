@@ -1,16 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block head %}
+Login
+{% endblock %}
 
-<h2>Login</h2>
-<form action="login" method="post">
+{% block content %}
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+</style>
+
+<main role="main" class="inner cover text-center">
+    <h1 class="cover-heading">Login Page</h1>
+    <p class="lead">Please input following information to use this web-site</p>
+    <p>
+    <form action="login" method="post">
     <div>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
@@ -20,8 +27,15 @@
         <input type="text" name="password" id="password">
     </div>
     <div>
-        <input type="submit">
+        <p class="lead">
+        <input class="btn btn-lg btn-secondary" type="submit" value="Lets goooo">
+        </p>
     </div>
 </form>
-</body>
-</html>
+
+</main>
+
+
+{% endblock %}
+
+

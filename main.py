@@ -10,6 +10,13 @@ USERNAME = os.environ['USERNAME']
 PASSWORD = os.environ['PASSWORD']
 
 
+@app.route("/about")
+def about():
+    username = request.cookies.get('username')
+    if username:
+        return render_template('about.html')
+    return render_template('guest.html')
+
 @app.route("/")
 def index():
     username = request.cookies.get('username')
@@ -42,7 +49,7 @@ def get_data():
     return jsonify(parse_all_data())
 
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['POST', 'GET'])
 def logout():
     resp = redirect("/", code=302)
     resp.delete_cookie('username')
